@@ -1,0 +1,59 @@
+{
+    "instance": "benchmarks/c5_t1_r1.json",
+    "description": "Containers number: 5. Distribution: random. Trucks number: 1. Different truck locations: 1",
+    "containers": [
+        {
+            "latitude": 682,
+            "longitude": 237,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 100000000
+        },
+        {
+            "latitude": 164,
+            "longitude": 882,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 100000000
+        },
+        {
+            "latitude": 220,
+            "longitude": 361,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 100000000
+        },
+        {
+            "latitude": 879,
+            "longitude": 607,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 100000000
+        },
+        {
+            "latitude": 583,
+            "longitude": 560,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 100000000
+        }
+    ],
+    "trucks": [
+        {
+            "type": "BigTruck",
+            "latitude": 0,
+            "longitude": 499,
+            "start": 0,
+            "finish": 100000000
+        }
+    ],
+    "landfills": [
+        {
+            "latitude": 1000,
+            "longitude": 500,
+            "start": 0,
+            "finish": 100000000,
+            "max_trucks": 100
+        }
+    ]
+}

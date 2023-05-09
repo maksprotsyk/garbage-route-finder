@@ -1,0 +1,25 @@
+{
+    "truck_types": [
+        {
+            "type": "BigTruck",
+            "speed": 45,
+            "fuel_consumption": 0.25,
+            "fuel_capacity": 300,
+            "capacities": {
+                "mixed": 35000
+            },
+            "unloading_time": 0.05
+        }
+    ],
+    "container_types": [
+        {
+            "type": "RegularContainer",
+            "capacity": 1100,
+            "garbage_type": "mixed",
+            "processing_time": 0.05
+        }
+    ],
+    "garbage_types": [
+        "mixed"
+    ]
+}

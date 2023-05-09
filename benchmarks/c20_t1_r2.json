@@ -1,0 +1,184 @@
+{
+    "instance": "benchmarks/c20_t1_r2.json",
+    "description": "Containers number: 20. Distribution: 2 clusters. Trucks number: 1. Different truck locations: 1",
+    "containers": [
+        {
+            "latitude": 611,
+            "longitude": 588,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 450,
+            "longitude": 552,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 573,
+            "longitude": 580,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 561,
+            "longitude": 750,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 514,
+            "longitude": 853,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 368,
+            "longitude": 627,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 334,
+            "longitude": 769,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 541,
+            "longitude": 719,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 437,
+            "longitude": 656,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 372,
+            "longitude": 822,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 335,
+            "longitude": 282,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 515,
+            "longitude": 124,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 334,
+            "longitude": 336,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 433,
+            "longitude": 390,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 573,
+            "longitude": 344,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 439,
+            "longitude": 403,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 438,
+            "longitude": 296,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 432,
+            "longitude": 466,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 468,
+            "longitude": 355,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 533,
+            "longitude": 131,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        }
+    ],
+    "trucks": [
+        {
+            "type": "BigTruck",
+            "latitude": 0,
+            "longitude": 499,
+            "start": 0,
+            "finish": 10000000000
+        }
+    ],
+    "landfills": [
+        {
+            "latitude": 1000,
+            "longitude": 500,
+            "start": 0,
+            "finish": 10000000000,
+            "max_trucks": 100
+        }
+    ]
+}

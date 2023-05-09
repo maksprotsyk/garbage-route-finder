@@ -1,0 +1,164 @@
+{
+    "instance": "benchmarks/c20_t1_r1.json",
+    "description": "Containers number: 20. Distribution: random. Trucks number: 1. Different truck locations: 1",
+    "containers": [
+        {
+            "latitude": 682,
+            "longitude": 237,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 164,
+            "longitude": 882,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 220,
+            "longitude": 361,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 879,
+            "longitude": 607,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 583,
+            "longitude": 560,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 488,
+            "longitude": 767,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 196,
+            "longitude": 314,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 129,
+            "longitude": 599,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 543,
+            "longitude": 499,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 880,
+            "longitude": 722,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 102,
+            "longitude": 885,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 556,
+            "longitude": 812,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 838,
+            "longitude": 372,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 705,
+            "longitude": 334,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 425,
+            "longitude": 204,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 122,
+            "longitude": 131,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 765,
+            "longitude": 126,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 109,
+            "longitude": 654,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 802,
+            "longitude": 490,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "latitude": 532,
+            "longitude": 321,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000
+        }
+    ],
+    "trucks": [
+        {
+            "type": "BigTruck",
+            "latitude": 0,
+            "longitude": 499,
+            "start": 0,
+            "finish": 10000000000
+        }
+    ],
+    "landfills": [
+        {
+            "latitude": 1000,
+            "longitude": 500,
+            "start": 0,
+            "finish": 10000000000,
+            "max_trucks": 100
+        }
+    ]
+}

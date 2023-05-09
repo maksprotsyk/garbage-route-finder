@@ -1,0 +1,845 @@
+{
+    "instance": "benchmarks/c100_t4_r2.json",
+    "description": "Containers number: 100. Distribution: 2 clusters. Trucks number: 4. Different truck locations: 2",
+    "containers": [
+        {
+            "latitude": 611,
+            "longitude": 588,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 450,
+            "longitude": 552,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 573,
+            "longitude": 580,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 561,
+            "longitude": 750,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 514,
+            "longitude": 853,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 368,
+            "longitude": 627,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 334,
+            "longitude": 769,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 541,
+            "longitude": 719,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 437,
+            "longitude": 656,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 372,
+            "longitude": 822,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 335,
+            "longitude": 682,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 515,
+            "longitude": 524,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 334,
+            "longitude": 736,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 433,
+            "longitude": 790,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 573,
+            "longitude": 744,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 439,
+            "longitude": 803,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 438,
+            "longitude": 696,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 432,
+            "longitude": 866,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 468,
+            "longitude": 755,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 533,
+            "longitude": 531,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 415,
+            "longitude": 571,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 471,
+            "longitude": 842,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 490,
+            "longitude": 581,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 536,
+            "longitude": 776,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 475,
+            "longitude": 617,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 620,
+            "longitude": 665,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 578,
+            "longitude": 775,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 621,
+            "longitude": 721,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 565,
+            "longitude": 537,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 526,
+            "longitude": 644,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 660,
+            "longitude": 732,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 507,
+            "longitude": 608,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 511,
+            "longitude": 865,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 544,
+            "longitude": 564,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 580,
+            "longitude": 859,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 403,
+            "longitude": 575,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 521,
+            "longitude": 786,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 570,
+            "longitude": 709,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 560,
+            "longitude": 535,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 477,
+            "longitude": 542,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 521,
+            "longitude": 816,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 407,
+            "longitude": 851,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 577,
+            "longitude": 606,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 596,
+            "longitude": 622,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 438,
+            "longitude": 800,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 583,
+            "longitude": 727,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 615,
+            "longitude": 696,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 555,
+            "longitude": 700,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 657,
+            "longitude": 657,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 631,
+            "longitude": 800,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 0
+        },
+        {
+            "latitude": 516,
+            "longitude": 122,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 386,
+            "longitude": 382,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 607,
+            "longitude": 385,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 538,
+            "longitude": 225,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 566,
+            "longitude": 148,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 611,
+            "longitude": 306,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 422,
+            "longitude": 403,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 531,
+            "longitude": 378,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 502,
+            "longitude": 368,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 497,
+            "longitude": 332,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 639,
+            "longitude": 396,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 489,
+            "longitude": 433,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 627,
+            "longitude": 354,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 437,
+            "longitude": 134,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 410,
+            "longitude": 445,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 619,
+            "longitude": 401,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 366,
+            "longitude": 212,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 450,
+            "longitude": 402,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 551,
+            "longitude": 128,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 463,
+            "longitude": 127,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 457,
+            "longitude": 247,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 496,
+            "longitude": 214,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 355,
+            "longitude": 268,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 401,
+            "longitude": 205,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 590,
+            "longitude": 250,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 651,
+            "longitude": 259,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 552,
+            "longitude": 270,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 484,
+            "longitude": 479,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 562,
+            "longitude": 374,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 517,
+            "longitude": 279,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 535,
+            "longitude": 295,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 452,
+            "longitude": 216,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 449,
+            "longitude": 175,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 427,
+            "longitude": 381,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 541,
+            "longitude": 430,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 523,
+            "longitude": 129,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 548,
+            "longitude": 202,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 598,
+            "longitude": 338,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 642,
+            "longitude": 232,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 434,
+            "longitude": 350,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 652,
+            "longitude": 388,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 522,
+            "longitude": 135,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 657,
+            "longitude": 284,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 538,
+            "longitude": 443,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 472,
+            "longitude": 150,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 428,
+            "longitude": 184,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 476,
+            "longitude": 144,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 472,
+            "longitude": 278,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 533,
+            "longitude": 201,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        },
+        {
+            "latitude": 449,
+            "longitude": 409,
+            "type": "MixedRegular",
+            "start": 0,
+            "finish": 10000000000,
+            "cluster": 1
+        }
+    ],
+    "trucks": [
+        {
+            "type": "BigTruck",
+            "latitude": 500,
+            "longitude": 1000,
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "type": "BigTruck",
+            "latitude": 500,
+            "longitude": 1000,
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "type": "BigTruck",
+            "latitude": 500,
+            "longitude": 0,
+            "start": 0,
+            "finish": 10000000000
+        },
+        {
+            "type": "BigTruck",
+            "latitude": 500,
+            "longitude": 0,
+            "start": 0,
+            "finish": 10000000000
+        }
+    ],
+    "landfills": [
+        {
+            "latitude": 1000,
+            "longitude": 500,
+            "start": 0,
+            "finish": 10000000000,
+            "max_trucks": 100
+        }
+    ]
+}

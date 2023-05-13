@@ -185,7 +185,7 @@ double InterChangeAction::ExpectedDiff(const Solution& sol) const
         else if (container_index2 + 1 == container_index1)
         {
             double oldDistance = prevLoc2.Distance(loc2) + loc2.Distance(loc1) + loc1.Distance(nextLoc1);
-            double newDistance = prevLoc2.Distance(loc1) + loc2.Distance(loc2) + loc2.Distance(nextLoc1);
+            double newDistance = prevLoc2.Distance(loc1) + loc1.Distance(loc2) + loc2.Distance(nextLoc1);
             return (oldDistance - newDistance) * truck1.GetFuelConsumption();
         }
 

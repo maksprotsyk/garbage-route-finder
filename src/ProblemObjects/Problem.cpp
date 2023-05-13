@@ -72,6 +72,20 @@ void Problem::ReadProblem(const std::string &path)
         m_garbageTrucks.back().SetTypeData(m_truckTypes[truck_info["type"].get<std::string>()]);
     }
 
+    std::sort(m_garbageTrucks.begin(), m_garbageTrucks.end(), [](const GarbageTruck& truck1, const GarbageTruck& truck2){
+        double totalCapacity1 = 0;
+        for (const auto& [k, v]: truck1.GetCapacities())
+        {
+            totalCapacity1 += v;
+        }
+        double totalCapacity2 = 0;
+        for (const auto& [k, v]: truck2.GetCapacities())
+        {
+            totalCapacity2 += v;
+        }
+        return totalCapacity1 > totalCapacity2;
+    });
+
     auto landfills_json = json["landfills"];
     for (auto& landfill_info: landfills_json) {
         m_landfills.emplace_back(

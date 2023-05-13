@@ -138,6 +138,6 @@ double ReverseAction::ExpectedDiff(const Solution &sol) const
     {
         newDistance += otherLocation[i+1].Distance(otherLocation[i]);
     }
-
-    return originalDistance - newDistance;
+    const GarbageTruck& truck = problem.GetTruck(sol.Routes[route_index].Truck);
+    return (originalDistance - newDistance) * truck.GetFuelConsumption();
 }

@@ -42,7 +42,7 @@ std::vector<std::pair<std::shared_ptr<Action>, std::shared_ptr<Action>>> SwapAny
             for (size_t c = 0; c < solution.Routes[r].Exportations[e].Containers.size(); c++)
             {
                 ObjectId id = solution.Routes[r].Exportations[e].Containers[c];
-                ContainerLocation location;
+                ContainerLocation location{};
                 location.routeIndex = r;
                 location.expIndex = e;
                 location.index = c;

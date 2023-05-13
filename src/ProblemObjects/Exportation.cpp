@@ -22,6 +22,7 @@ double Exportation::GetFinishDistance() const
 
 bool Exportation::RecalculateVolumes(size_t start)
 {
+
     if (Containers.size() <= start)
     {
         return true;
@@ -82,6 +83,7 @@ bool Exportation::RecalculateVolumes(size_t start)
 
 bool Exportation::RecalculateDistances(size_t start)
 {
+
     if (Containers.size() <= start)
     {
         return true;
@@ -99,6 +101,7 @@ bool Exportation::RecalculateDistances(size_t start)
             m_distances.emplace_back(0);
         }
     }
+
     Problem& problem = Problem::GetProblem();
     const GarbageTruck& truck = problem.GetTruck(Truck);
 
@@ -129,6 +132,7 @@ bool Exportation::RecalculateDistances(size_t start)
 
 bool Exportation::RecalculateFinishTimes(size_t start)
 {
+
     if (Containers.size() <= start)
     {
         return true;
@@ -137,7 +141,8 @@ bool Exportation::RecalculateFinishTimes(size_t start)
     if (m_finishTimes.size() > Containers.size())
     {
         m_finishTimes.erase(m_finishTimes.begin() + Containers.size(), m_finishTimes.end());
-    } else if (m_finishTimes.size() < Containers.size())
+    }
+    else if (m_finishTimes.size() < Containers.size())
     {
         m_finishTimes.reserve(Containers.size() - m_finishTimes.size());
         for (size_t i = m_finishTimes.size(); i < Containers.size(); i++)
@@ -154,9 +159,17 @@ bool Exportation::RecalculateFinishTimes(size_t start)
     for (size_t i = start; i < m_finishTimes.size(); i++)
     {
         const Container &container = problem.GetContainer(Containers[i]);
-        double startTime = m_distances[i] / speed + StartTime;
+        double startTime;
+        if (i != 0)
+        {
+            startTime = (m_distances[i] - m_distances[i-1]) / speed + m_finishTimes[i-1];
+        }
+        else
+        {
+            startTime = (m_distances[i] - StartDistance) / speed + StartTime;
+        }
         m_finishTimes[i] = std::max(startTime, container.GetTimeWindow().GetStart()) + container.GetProcessingTime();
-        if (m_finishTimes[i] > container.GetTimeWindow().GetEnd())
+        if (m_finishTimes[i] > container.GetTimeWindow().GetEnd() || m_finishTimes[i] > truck.GetTimeWindow().GetEnd())
         {
             return false;
         }
@@ -195,7 +208,7 @@ bool Exportation::RecalculateFinishValues()
         return false;
     }
     m_finishTime = std::max(time + distanceToLandfill / truck.GetSpeed(), landfill.GetTimeWindow().GetStart()) + truck.GetUnloadingTime();
-    return m_finishTime <= landfill.GetTimeWindow().GetEnd();
+    return m_finishTime <= landfill.GetTimeWindow().GetEnd() && m_finishTime <= truck.GetTimeWindow().GetEnd();
 }
 
 bool Exportation::RecalculateInnerValues(size_t start)

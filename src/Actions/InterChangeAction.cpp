@@ -86,6 +86,8 @@ bool InterChangeAction::Recalculate(Solution& sol) const
 
     for (size_t i = exportation_index2 + 1; i < sol.Routes[route_index2].Exportations.size(); i++)
     {
+        sol.Routes[route_index2].Exportations[i].StartDistance = sol.Routes[route_index2].Exportations[i-1].GetFinishDistance();
+        sol.Routes[route_index2].Exportations[i].StartTime = sol.Routes[route_index2].Exportations[i-1].GetFinishTime();
         if (!sol.Routes[route_index2].Exportations[i].RecalculateInnerValues(0) ||
             !sol.Routes[route_index2].Exportations[i].RecalculateFinishValues())
         {
@@ -169,30 +171,33 @@ double InterChangeAction::ExpectedDiff(const Solution& sol) const
         nextLoc2 = problem.GetContainer(nextContainer).GetLocation();
     }
 
-    double currentDistance = prevLoc1.Distance(loc1)
-                             + loc1.Distance(nextLoc1)
-                             + prevLoc2.Distance(loc2)
-                             + loc2.Distance(nextLoc2);
+    const GarbageTruck& truck1 = problem.GetTruck(sol.Routes[route_index1].Truck);
+    const GarbageTruck& truck2 = problem.GetTruck(sol.Routes[route_index2].Truck);
 
     if (exportation_index1 == exportation_index2 && route_index1 == route_index2)
     {
         if (container_index2 == container_index1 + 1)
         {
-            nextLoc1 = loc1;
-            prevLoc2 = loc2;
+            double oldDistance = prevLoc1.Distance(loc1) + loc1.Distance(loc2) + loc2.Distance(nextLoc2);
+            double newDistance = prevLoc1.Distance(loc2) + loc2.Distance(loc1) + loc1.Distance(nextLoc2);
+            return (oldDistance - newDistance) * truck1.GetFuelConsumption();
         }
         else if (container_index2 + 1 == container_index1)
         {
-            nextLoc2 = loc2;
-            prevLoc1 = loc1;
+            double oldDistance = prevLoc2.Distance(loc2) + loc2.Distance(loc1) + loc1.Distance(nextLoc1);
+            double newDistance = prevLoc2.Distance(loc1) + loc2.Distance(loc2) + loc2.Distance(nextLoc1);
+            return (oldDistance - newDistance) * truck1.GetFuelConsumption();
         }
+
     }
 
-    double newDistance = prevLoc1.Distance(loc2)
-                             + loc2.Distance(nextLoc1)
-                             + prevLoc2.Distance(loc1)
-                             + loc1.Distance(nextLoc2);
+    double currentFuel = (prevLoc1.Distance(loc1) + loc1.Distance(nextLoc1)) * truck1.GetFuelConsumption()
+                         + (prevLoc2.Distance(loc2) + loc2.Distance(nextLoc2)) * truck2.GetFuelConsumption();
 
-    return currentDistance - newDistance;
+
+    double newFuel = (prevLoc1.Distance(loc2) + loc2.Distance(nextLoc1)) * truck1.GetFuelConsumption()
+            + (prevLoc2.Distance(loc1) + loc1.Distance(nextLoc2)) * truck2.GetFuelConsumption();
+
+    return currentFuel - newFuel;
 
 }

@@ -181,12 +181,12 @@ bool Solution::CheckSolution()
 
 double Solution::CalculateCost() const
 {
-    double distCoef = 1;
+    double fuelCoef = 1;
     double orphanCoef = 100;
     double cost = 0;
 
     cost += orphanCoef * Orphans.size();
-    cost += distCoef * CalculateTotalDistance();
+    cost += fuelCoef * CalculateTotalFuel();
 
     return cost;
 }

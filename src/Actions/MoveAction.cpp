@@ -46,9 +46,9 @@ bool MoveAction::PerformOneExportation(Solution &sol) const
             return true;
         }
 
-        for (size_t i = container_index2 - 1; i >= container_index1; i--)
+        for (size_t i = container_index2; i >= container_index1 + 1; i--)
         {
-            exportation.Containers[i-1] = exportation.Containers[i];
+            exportation.Containers[i] = exportation.Containers[i-1];
         }
         exportation.Containers[container_index1] = container;
         RecalculateOneExportation(sol);
@@ -257,8 +257,12 @@ double MoveAction::ExpectedDiff(const Solution &sol) const
         ObjectId container = exportation2.Containers[realIndex2];
         nextLoc2 = problem.GetContainer(container).GetLocation();
     }
+    const GarbageTruck& truck1 = problem.GetTruck(sol.Routes[route_index1].Truck);
+    const GarbageTruck& truck2 = problem.GetTruck(sol.Routes[route_index2].Truck);
 
-    double originalDistance = prevLoc1.Distance(loc) + loc.Distance(nextLoc1) + prevLoc2.Distance(nextLoc2);
-    double newDistance = prevLoc1.Distance(nextLoc1) + prevLoc2.Distance(loc) + loc.Distance(nextLoc2);
-    return  originalDistance - newDistance;
+    double originalFuel = (prevLoc1.Distance(loc) + loc.Distance(nextLoc1)) * truck1.GetFuelConsumption()
+                              + prevLoc2.Distance(nextLoc2) * truck2.GetFuelConsumption();
+    double newFuel = prevLoc1.Distance(nextLoc1) * truck1.GetFuelConsumption()
+                        + (prevLoc2.Distance(loc) + loc.Distance(nextLoc2)) * truck2.GetFuelConsumption();
+    return  originalFuel - newFuel;
 }

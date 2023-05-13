@@ -67,12 +67,25 @@ Solution GreedySolution::CreateSolution() const
                 }
 
                 std::sort(sortedLandfills.begin(), sortedLandfills.end(),
-                          [&problem, &lastLocation](ObjectId a, ObjectId b)
+                          [&problem, &lastLocation, &truck, &lastExportation](ObjectId a, ObjectId b)
                           {
                               const Landfill& first = problem.GetLandfill(a);
                               const Landfill& second = problem.GetLandfill(b);
-                              return lastLocation.Distance(first.GetLocation())
-                                     < lastLocation.Distance(second.GetLocation());
+
+                              double timeDelta1 = lastLocation.Distance(first.GetLocation()) / truck.GetSpeed();
+                              double processingStart1 = std::max(lastExportation.GetFinishTime() + timeDelta1,
+                                                                 first.GetTimeWindow().GetStart());
+
+                              double timeDelta2 = lastLocation.Distance(second.GetLocation()) / truck.GetSpeed();
+                              double processingStart2 = std::max(lastExportation.GetFinishTime() + timeDelta2,
+                                                                 second.GetTimeWindow().GetStart());
+
+                              if (processingStart1 == processingStart2)
+                              {
+                                  return timeDelta1 < timeDelta2;
+                              }
+
+                              return processingStart1 < processingStart2;
                           });
 
                 std::vector<ObjectId> sortedContainers;
@@ -83,12 +96,25 @@ Solution GreedySolution::CreateSolution() const
                 }
 
                 std::sort(sortedContainers.begin(), sortedContainers.end(),
-                          [&problem, &lastLocation](ObjectId a, ObjectId b)
+                          [&problem, &lastLocation, &lastExportation, &truck](ObjectId a, ObjectId b)
                           {
                               const Container& first = problem.GetContainer(a);
                               const Container& second = problem.GetContainer(b);
-                              return lastLocation.Distance(first.GetLocation())
-                                     < lastLocation.Distance(second.GetLocation());
+
+                              double timeDelta1 = lastLocation.Distance(first.GetLocation()) / truck.GetSpeed();
+                              double processingStart1 = std::max(lastExportation.GetFinishTime() + timeDelta1,
+                                                                 first.GetTimeWindow().GetStart());
+
+                              double timeDelta2 = lastLocation.Distance(second.GetLocation()) / truck.GetSpeed();
+                              double processingStart2 = std::max(lastExportation.GetFinishTime() + timeDelta2,
+                                                                 second.GetTimeWindow().GetStart());
+
+                              if (processingStart1 == processingStart2)
+                              {
+                                  return timeDelta1 < timeDelta2;
+                              }
+
+                              return processingStart1 < processingStart2;
                           });
 
                 bool found = false;
@@ -123,7 +149,7 @@ Solution GreedySolution::CreateSolution() const
                 if (!found)
                 {
                     lastExportation.CurrentLandfill = oldLandfill;
-                    if (oldLandfill > 0)
+                    if (oldLandfill >= 0)
                     {
                         lastExportation.RecalculateInnerValues(lastExportation.Containers.size() - 1);
                         lastExportation.RecalculateFinishValues();
@@ -139,6 +165,7 @@ Solution GreedySolution::CreateSolution() const
             if (lastExportation.Containers.empty())
             {
                 route.Exportations.pop_back();
+                route.CalculateFinishValues();
                 itr = goodRoutes.erase(itr);
             }
             else

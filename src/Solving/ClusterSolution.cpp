@@ -78,7 +78,7 @@ Solution ClusterSolution::CreateSolution() const
                 }
 
                 std::sort(sortedLandfills.begin(), sortedLandfills.end(),
-                          [&problem, &lastLocation, &lastCluster, &clusters](ObjectId a, ObjectId b)
+                          [&problem, &lastLocation, &lastCluster, &clusters, &lastExportation, &truck](ObjectId a, ObjectId b)
                           {
                               int clusterA = clusters[problem.GetContainersNum() + problem.GetTrucksNum() + a];
                               int clusterB = clusters[problem.GetContainersNum() + problem.GetTrucksNum() + b];
@@ -92,8 +92,21 @@ Solution ClusterSolution::CreateSolution() const
                               }
                               const Landfill& first = problem.GetLandfill(a);
                               const Landfill& second = problem.GetLandfill(b);
-                              return lastLocation.Distance(first.GetLocation())
-                                     < lastLocation.Distance(second.GetLocation());
+
+                              double timeDelta1 = lastLocation.Distance(first.GetLocation()) / truck.GetSpeed();
+                              double processingStart1 = std::max(lastExportation.GetFinishTime() + timeDelta1,
+                                                                 first.GetTimeWindow().GetStart());
+
+                              double timeDelta2 = lastLocation.Distance(second.GetLocation()) / truck.GetSpeed();
+                              double processingStart2 = std::max(lastExportation.GetFinishTime() + timeDelta2,
+                                                                 second.GetTimeWindow().GetStart());
+
+                              if (processingStart1 == processingStart2)
+                              {
+                                  return timeDelta1 < timeDelta2;
+                              }
+
+                              return processingStart1 < processingStart2;
                           });
 
                 std::vector<ObjectId> sortedContainers;
@@ -104,7 +117,7 @@ Solution ClusterSolution::CreateSolution() const
                 }
 
                 std::sort(sortedContainers.begin(), sortedContainers.end(),
-                          [&problem, &lastLocation, &lastCluster, &clusters](ObjectId a, ObjectId b)
+                          [&problem, &lastLocation, &lastCluster, &clusters, &lastExportation, &truck](ObjectId a, ObjectId b)
                           {
                               int clusterA = clusters[a];
                               int clusterB = clusters[b];
@@ -119,8 +132,21 @@ Solution ClusterSolution::CreateSolution() const
 
                               const Container& first = problem.GetContainer(a);
                               const Container& second = problem.GetContainer(b);
-                              return lastLocation.Distance(first.GetLocation())
-                                     < lastLocation.Distance(second.GetLocation());
+
+                              double timeDelta1 = lastLocation.Distance(first.GetLocation()) / truck.GetSpeed();
+                              double processingStart1 = std::max(lastExportation.GetFinishTime() + timeDelta1,
+                                                                 first.GetTimeWindow().GetStart());
+
+                              double timeDelta2 = lastLocation.Distance(second.GetLocation()) / truck.GetSpeed();
+                              double processingStart2 = std::max(lastExportation.GetFinishTime() + timeDelta2,
+                                                                 second.GetTimeWindow().GetStart());
+
+                              if (processingStart1 == processingStart2)
+                              {
+                                  return timeDelta1 < timeDelta2;
+                              }
+
+                              return processingStart1 < processingStart2;
                           });
 
                 bool found = false;
@@ -155,7 +181,7 @@ Solution ClusterSolution::CreateSolution() const
                 if (!found)
                 {
                     lastExportation.CurrentLandfill = oldLandfill;
-                    if (oldLandfill > 0)
+                    if (oldLandfill >= 0)
                     {
                         lastExportation.RecalculateInnerValues(lastExportation.Containers.size() - 1);
                         lastExportation.RecalculateFinishValues();
@@ -171,6 +197,7 @@ Solution ClusterSolution::CreateSolution() const
             if (lastExportation.Containers.empty())
             {
                 route.Exportations.pop_back();
+                route.CalculateFinishValues();
                 itr = goodRoutes.erase(itr);
             }
             else

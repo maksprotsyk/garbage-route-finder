@@ -216,7 +216,7 @@ std::vector<ObjectId> GeneticSearch::GetContainersOrder(const Solution& sol)
     containers.reserve(containersNum);
 
     std::vector<size_t> goodRoutes;
-    goodRoutes.reserve(sol.Routes.size());
+  //  goodRoutes.reserve(sol.Routes.size());
     for (size_t i = 0; i < sol.Routes.size(); i++)
     {
         goodRoutes.push_back(i);
@@ -311,12 +311,25 @@ std::shared_ptr<Solution> GeneticSearch::CreateSolutionFromOrder(const std::vect
                 const Location& location = problem.GetContainer(container).GetLocation();
 
                 std::sort(sortedLandfills.begin(), sortedLandfills.end(),
-                          [&problem, &location](ObjectId a, ObjectId b)
+                          [&problem, &location, &lastExportation, &truck](ObjectId a, ObjectId b)
                           {
                               const Landfill& first = problem.GetLandfill(a);
                               const Landfill& second = problem.GetLandfill(b);
-                              return location.Distance(first.GetLocation())
-                                     < location.Distance(second.GetLocation());
+
+                              double timeDelta1 = location.Distance(first.GetLocation()) / truck.GetSpeed();
+                              double processingStart1 = std::max(lastExportation.GetFinishTime() + timeDelta1,
+                                                                 first.GetTimeWindow().GetStart());
+
+                              double timeDelta2 = location.Distance(second.GetLocation()) / truck.GetSpeed();
+                              double processingStart2 = std::max(lastExportation.GetFinishTime() + timeDelta2,
+                                                                 second.GetTimeWindow().GetStart());
+
+                              if (processingStart1 == processingStart2)
+                              {
+                                  return timeDelta1 < timeDelta2;
+                              }
+
+                              return processingStart1 < processingStart2;
                           });
 
 
@@ -340,7 +353,7 @@ std::shared_ptr<Solution> GeneticSearch::CreateSolutionFromOrder(const std::vect
                 {
                     lastExportation.Containers.pop_back();
                     lastExportation.CurrentLandfill = oldLandfill;
-                    if (oldLandfill > 0)
+                    if (oldLandfill >= 0)
                     {
                         lastExportation.RecalculateInnerValues(lastExportation.Containers.size() - 1);
                         lastExportation.RecalculateFinishValues();
@@ -355,6 +368,7 @@ std::shared_ptr<Solution> GeneticSearch::CreateSolutionFromOrder(const std::vect
             if (lastExportation.Containers.empty())
             {
                 route.Exportations.pop_back();
+                route.CalculateFinishValues();
                 itr = goodRoutes.erase(itr);
             }
             else

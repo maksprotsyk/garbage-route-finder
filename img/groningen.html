@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "strokeWidth": 0}}, "vconcat": [{"data": {"name": "empty"}, "mark": "text", "height": 0, "title": {"text": "Best algorithms results for Groningen", "anchor": "middle", "fontSize": 16, "subtitleFontSize": 12, "subtitlePadding": 5}, "width": 600}, {"data": {"name": "data-8dddd3a00dcc9898003545b76cbd402f"}, "mark": {"type": "bar", "size": 40}, "encoding": {"color": {"value": "lightblue"}, "tooltip": [{"field": "heuristic", "title": "Heuristic", "type": "nominal"}, {"field": "search", "title": "Search", "type": "nominal"}, {"field": "base_solution", "title": "Base solution", "type": "nominal"}, {"field": "iterations", "title": "Iterations", "type": "quantitative"}, {"field": "TotalDistance", "title": "Total distance", "type": "quantitative"}, {"field": "execution_time", "title": "Execution time", "type": "quantitative"}, {"field": "population_size", "title": "Population size", "type": "quantitative"}, {"field": "mutation_probability", "title": "Mutation probability", "type": "quantitative"}, {"field": "temp_coef", "title": "Temp coef", "type": "quantitative"}, {"field": "tabu_queue_coef", "title": "Queue coef", "type": "quantitative"}], "x": {"axis": {"labelFontSize": 0, "title": ""}, "field": "Name", "type": "nominal"}, "y": {"axis": {"format": "%"}, "field": "diff", "title": "", "type": "quantitative"}}, "height": 200, "title": {"text": "Total distance difference (in percents)", "fontSize": 12}, "width": 600}, {"data": {"name": "data-8dddd3a00dcc9898003545b76cbd402f"}, "mark": "text", "encoding": {"text": {"field": "Name", "type": "nominal"}, "x": {"axis": null, "field": "Name", "type": "nominal"}}, "height": 10, "width": 600}, {"data": {"name": "data-8dddd3a00dcc9898003545b76cbd402f"}, "mark": {"type": "bar", "size": 40}, "encoding": {"color": {"value": "lightgray"}, "tooltip": [{"field": "heuristic", "title": "Heuristic", "type": "nominal"}, {"field": "search", "title": "Search", "type": "nominal"}, {"field": "base_solution", "title": "Base solution", "type": "nominal"}, {"field": "iterations", "title": "Iterations", "type": "quantitative"}, {"field": "TotalDistance", "title": "Total distance", "type": "quantitative"}, {"field": "execution_time", "title": "Execution time", "type": "quantitative"}, {"field": "population_size", "title": "Population size", "type": "quantitative"}, {"field": "mutation_probability", "title": "Mutation probability", "type": "quantitative"}, {"field": "temp_coef", "title": "Temp coef", "type": "quantitative"}, {"field": "tabu_queue_coef", "title": "Queue coef", "type": "quantitative"}], "x": {"axis": {"labelFontSize": 0, "orient": "top", "title": ""}, "field": "Name", "type": "nominal"}, "y": {"field": "execution_time", "scale": {"reverse": true}, "title": "s", "type": "quantitative"}}, "height": 200, "title": {"text": "Execution time difference", "fontSize": 12, "orient": "bottom"}, "width": 600}], "spacing": 0, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"empty": [{}], "data-8dddd3a00dcc9898003545b76cbd402f": [{"base_solution": "SIMPLE_GREEDY", "heuristic": "ANY_MOVE_EXPORTATION", "search": "TABU", "iterations": 500.0, "temp_coef": null, "population_size": null, "mutation_probability": null, "tabu_queue_coef": 0.3, "swap_any_to_generate": 500.0, "TotalDistance": 1399.5437000000002, "TotalTime": 15.67779778299319, "UnusedTrucksCount": 0, "OrphansCount": 0, "execution_time": 890.6295852661133, "TotalFuel": 349.88592500000004, "TrucksCount": 10, "Name": "TABU 500.0", "diff": 0.017532030474299232, "diff_time": 846.5904664993286}, {"base_solution": "SIMPLE_GREEDY", "heuristic": "ANY_MOVE_EXPORTATION", "search": "TABU", "iterations": 500.0, "temp_coef": null, "population_size": null, "mutation_probability": null, "tabu_queue_coef": 0.3, "swap_any_to_generate": null, "TotalDistance": 1403.1801, "TotalTime": 15.696062227437631, "UnusedTrucksCount": 0, "OrphansCount": 0, "execution_time": 117.42581701278687, "TotalFuel": 350.795025, "TrucksCount": 10, "Name": "TABU ", "diff": 0.01497930809458138, "diff_time": 73.3866982460022}, {"base_solution": "SIMPLE_GREEDY", "heuristic": "ANY_MOVE_EXPORTATION_FIXED2", "search": "GENETIC", "iterations": 500.0, "temp_coef": null, "population_size": 10.0, "mutation_probability": 0.1, "tabu_queue_coef": null, "swap_any_to_generate": null, "TotalDistance": 1395.5021000000002, "TotalTime": 15.708253338548742, "UnusedTrucksCount": 0, "OrphansCount": 0, "execution_time": 585.2530763149261, "TotalFuel": 348.87552500000004, "TrucksCount": 10, "Name": "GENETIC ", "diff": 0.020369199864319055, "diff_time": 541.2139575481415}, {"base_solution": "SIMPLE_GREEDY", "heuristic": "ANY_MOVE_EXPORTATION", "search": "ANNEALING", "iterations": 5000.0, "temp_coef": 1e-05, "population_size": null, "mutation_probability": null, "tabu_queue_coef": null, "swap_any_to_generate": null, "TotalDistance": 1397.3923, "TotalTime": 15.65701111632652, "UnusedTrucksCount": 0, "OrphansCount": 0, "execution_time": 623.5571789741516, "TotalFuel": 349.348075, "TrucksCount": 10, "Name": "ANNEALING ", "diff": 0.01904229527677577, "diff_time": 579.518060207367}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
